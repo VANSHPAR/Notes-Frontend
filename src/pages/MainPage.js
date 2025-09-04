@@ -7,12 +7,15 @@ const API_BASE = "http://localhost:8080/app/note";
 export default function MainPage() {
   const [notes, setNotes] = useState([]);
 
-  const fetchNotes = async () => {
+  const fetchNotes = async (retries = 5) => {
     try {
       const res = await axios.get(`${API_BASE}/getall`);
       setNotes(res.data);
     } catch (err) {
       console.error(err);
+      if(retries>0){
+        setTimeout(() => fetchNotes(retries - 1), 2000);
+      }
     }
   };
 
