@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useSearchParams } from "react-router-dom";
 
-const API_BASE = "http://localhost:8080/app/note";
+const API_BASE = "https://notes-backend-latest.onrender.com/app/note";
 
 export default function NewNote() {
   const [form, setForm] = useState({ title: "", content: "" });

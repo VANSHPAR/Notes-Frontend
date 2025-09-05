@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
-const API_BASE = "http://localhost:8080/app/note";
+const API_BASE = "https://notes-backend-latest.onrender.com/app/note";
 
 export default function SharedNote() {
   const { shareId } = useParams();
